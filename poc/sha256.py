@@ -96,6 +96,9 @@ h[0..7] :=
 
 
 def sha256(hashthis):
+   """
+   The meat of the hash is done here. Takes the thing you want to hash, returns the hashed thing
+   """
     h=[0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19]
     k=[0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
@@ -109,6 +112,10 @@ def sha256(hashthis):
 
 
 def preprocess(hashthis):
+   """
+   some bitwise preprocessing done here, see the Pseudocode for more details. Takes the thing you want to hash
+   returns the preprocessed form
+   """
     #append 1 for preprocessing, shift in 0 and add 1
     preprochashthis=hashthis*0b10+0b1
     #padding 0s until 448 in modulo(512)
@@ -122,6 +129,9 @@ def preprocess(hashthis):
 
 
 def main():
+   """
+   Just promts the user for an input and calls the hash function.
+   """
     hashthis=input("What do you want to hash?")
     hashed=sha256(hashthis)
 
