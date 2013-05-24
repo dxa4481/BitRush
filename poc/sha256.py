@@ -1,5 +1,5 @@
 """
-Pseudocode
+Pseudocode from wikipedia
 
 Note 1: All variables are unsigned 32 bits and wrap modulo 232 when calculating
 Note 2: All constants in this pseudo code are in big endian
