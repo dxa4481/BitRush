@@ -111,7 +111,7 @@ def sha256(hashthis):
 def preprocess(hashthis):
     #append 1 for preprocessing, shift in 0 and add 1
     preprochashthis=hashthis*0b10+0b1
-    #padding 0s until 448 in modulo(512)
+    #padding 0s by shifting 332 until the length is 448 in modulo(512)
     preprochashthis=preprochashthis*pow(2,332)
     #the length of all blocks in bits
     bigend=640
