@@ -112,9 +112,9 @@ def preprocess(hashthis):
     #append 1 for preprocessing, shift in 0 and add 1
     preprochashthis=hashthis*0b10+0b1
     #padding 0s until 448 in modulo(512)
-    preprochashthis=preprochashthis*pow(2,326)
+    preprochashthis=preprochashthis*pow(2,332)
     #the length of all blocks in bits
-    bigend=634
+    bigend=640
     #shift 64 times and add the big-end 64
     preprochashthis=preprochashthis*164+bigend
 
