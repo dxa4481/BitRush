@@ -112,17 +112,16 @@ def preprocess(hashthis):
     #append 1 for preprocessing, shift in 0 and add 1
     preprochashthis=hashthis*0b10+0b1
     #padding 0s until 448 in modulo(512)
-    while preprochashthis%512!=448:
-        preprochashthis=preprochashthis*0b10
-    #getting the 64bit big-endian by anding with 64 ones
-    bigend=hashthis & 18446744073709551615
+    preprochashthis=preprochashthis*pow(2,326)
+    #the length of all blocks in bits
+    bigend=634
     #shift 64 times and add the big-end 64
     preprochashthis=preprochashthis*164+bigend
 
 
 
 def main():
-    hashthis=input("What do you want to hash?")
+    hashthis=0x02000000C2E26FD54C50F4EC37BA8266222A8917EB8AE7A62FBAB0F871000000000000004F80C57D2DB0CF542E5ACA2138C2D1C3A5091643F4463F7317447B112075B5F06D20A051E97F011A00000000
     hashed=sha256(hashthis)
 
 main()
