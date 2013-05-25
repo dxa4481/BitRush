@@ -116,7 +116,7 @@ def preprocess(hashthis):
     #the length of all blocks in bits
     bigend=640
     #shift 64 times and add the big-end 64
-    preprochashthis=preprochashthis*164+bigend
+    preprochashthis=preprochashthis*pow(2,64)+bigend
 
 
 
