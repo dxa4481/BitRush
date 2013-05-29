@@ -25,6 +25,7 @@ import re
 import base64
 import httplib
 import sys
+import serial
 from multiprocessing import Process
 
 ERR_SLEEP = 15
@@ -101,12 +102,48 @@ class Miner:
 		self.id = id
 		self.max_nonce = MAX_NONCE
 
+	def work2(self, datastr, targetstr):
+		# take the block and convert it to binary format
+		static_data = datastr.decode('hex')
+		static_data = bufreverse(static_data)
+
+		# take the target and convert it to binary (and long)
+		targetbin = targetstr.decode('hex')
+		targetbin = targetbin[::-1]
+		targetbin_str = targetbin.encode('hex')
+		target = long(targetbin_str,16)
+
+		block_header = static_data[:80] # get the header from the block
+		"""
+		Here is where we preprocess everything This will make the length of
+		our block ALWAYS 128 bytes(?)
+		"""
+		block_header = preprocess(block_header)
+
+		port = serial.Serial(0) # This is opening the first serial port
+		
+		port.write(255)
+		port.write(targetbin) # Writing the BINARY form of the target
+		port.write(block_header) # Writing the PREPROCESSED header
+
+		result = port.read(4)
+
+		port.close()
+		print(result)
+
+	def preprocess(self, block_header):
+		"""
+		This is the function for running the preprocess part of the SHA256 algorithm
+		"""
+		return block_header
+
 	def work(self, datastr, targetstr):
 		# decode work data hex string to binary
 		static_data = datastr.decode('hex')
 
-		static_data = bufreverse(static_data)
+		print "Binary: "
 
+		static_data = bufreverse(static_data)
 		print "Length: ",len(datastr)
 		print "Version: {0}".format(datastr[0:4])
 		print "hashPrevBlock: {0}".format(datastr[4:36])
@@ -118,30 +155,11 @@ class Miner:
 		# the first 76b of 80b do not change
 		blk_hdr = static_data[:76]
 		
-		full_hdr = static_data[:80]
-		hdr_file = open('unhashed.bin','wb')
-		hdr_file.write(full_hdr)
-		hdr_file.close()
-
 		# decode 256-bit target value
 		targetbin = targetstr.decode('hex')
 		targetbin = targetbin[::-1]	# byte-swap and dword-swap
 		targetbin_str = targetbin.encode('hex')
 		target = long(targetbin_str, 16)
-
-		
-		hash_hdr = hashlib.sha256()
-		hash_hdr.update(full_hdr)
-		hash_file = open('hash1.bin','wb')
-		hash_file.write(hash_hdr.digest())
-		hash_file.close()
-
-		hash_hdr2 = hashlib.sha256()
-		hash_hdr2.update(hash_hdr.digest())
-		hf = open('hash2.bin','wb')
-		hf.write(hash_hdr2.digest())
-		hf.close()
-
 
 		# pre-hash first 76b of block header
 		static_hash = hashlib.sha256()
