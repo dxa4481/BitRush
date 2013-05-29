@@ -106,6 +106,7 @@ class Miner:
 		static_data = datastr.decode('hex')
 
 		static_data = bufreverse(static_data)
+
 		print "Length: ",len(datastr)
 		print "Version: {0}".format(datastr[0:4])
 		print "hashPrevBlock: {0}".format(datastr[4:36])
@@ -117,6 +118,11 @@ class Miner:
 		# the first 76b of 80b do not change
 		blk_hdr = static_data[:76]
 		
+		full_hdr = static_data[:80]
+		hdr_file = open('unhashed.bin','wb')
+		hdr_file.write(full_hdr)
+		hdr_file.close()
+
 		# decode 256-bit target value
 		targetbin = targetstr.decode('hex')
 		targetbin = targetbin[::-1]	# byte-swap and dword-swap
@@ -124,6 +130,18 @@ class Miner:
 		target = long(targetbin_str, 16)
 
 		
+		hash_hdr = hashlib.sha256()
+		hash_hdr.update(full_hdr)
+		hash_file = open('hash1.bin','wb')
+		hash_file.write(hash_hdr.digest())
+		hash_file.close()
+
+		hash_hdr2 = hashlib.sha256()
+		hash_hdr2.update(hash_hdr.digest())
+		hf = open('hash2.bin','wb')
+		hf.write(hash_hdr2.digest())
+		hf.close()
+
 
 		# pre-hash first 76b of block header
 		static_hash = hashlib.sha256()
