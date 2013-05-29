@@ -31,7 +31,7 @@ work(datastr, targetstr)
 1. grab first 76 bytes of header
 2. append to end new 32 bit nonce value (resulting in 80 byte payload)
 3. hash 80 byte pyaload
-4. hash 80 byte payload again.
+4. hash 32 byte hash of the payload.
 5. compair to target value, if less = success, else increment nonce, go to #1
 
 
