@@ -23,6 +23,37 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema"/>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812654" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="messagechunk.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3150931036567041" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4261939554256980547" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3645977273260071486" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812654" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="messagechunk.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1369812658" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1369812654">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>

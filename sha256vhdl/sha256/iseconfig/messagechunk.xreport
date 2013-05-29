@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-05-28T23:25:48</DateModified>
+  <DateModified>2013-05-29T03:10:52</DateModified>
   <ModuleName>messagechunk</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/iseconfig/messagechunk.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256\</ImplementationReportsDirectory>
   <DateInitialized>2013-05-28T23:25:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
