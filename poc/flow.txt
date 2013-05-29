@@ -1,0 +1,37 @@
+int length
+
+l_lsb = length % 256
+l_msb = (lenth / 256) % 256
+
+l_lsb = length & 255
+l_msb = (length >> 8) & 255
+
+0000 0000 0000 0000 0000 0000 1111 1111
+
+work(datastr, targetstr)
+
+	# convert data string to byte array
+	
+	# byte swap data string
+	
+	# convert target string to byte array
+	
+	# byte swap and dword swap target byte array
+	
+	# create fpga packet
+	
+	# send fpga packet
+	
+	# wait for FPGA responce (which will be success nonce value)
+	
+	# add 1 to nonce
+	
+	# submit work
+
+1. grab first 76 bytes of header
+2. append to end new 32 bit nonce value (resulting in 80 byte payload)
+3. hash 80 byte pyaload
+4. hash 80 byte payload again.
+5. compair to target value, if less = success, else increment nonce, go to #1
+
+

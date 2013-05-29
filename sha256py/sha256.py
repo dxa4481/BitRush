@@ -111,16 +111,17 @@ def sha256(hashthis):
 def preprocess(hashthis):
     #append 1 for preprocessing, shift in 0 and add 1
     preprochashthis=hashthis*0b10+0b1
-    #padding 0s until 448 in modulo(512)
-    preprochashthis=preprochashthis*pow(2,326)
+    #padding 0s by shifting 332 until the length is 448 in modulo(512)
+    preprochashthis=preprochashthis*pow(2,332)
     #the length of all blocks in bits
-    bigend=634
+    bigend=640
     #shift 64 times and add the big-end 64
-    preprochashthis=preprochashthis*164+bigend
+    preprochashthis=preprochashthis*pow(2,64)+bigend
 
 
 
 def main():
+   #this is a block for the sake of testing. It is a real block
     hashthis=0x02000000C2E26FD54C50F4EC37BA8266222A8917EB8AE7A62FBAB0F871000000000000004F80C57D2DB0CF542E5ACA2138C2D1C3A5091643F4463F7317447B112075B5F06D20A051E97F011A00000000
     hashed=sha256(hashthis)
 
