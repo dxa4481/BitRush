@@ -112,7 +112,7 @@ begin
 				for i in 0 to 63 loop
 					s1:=(letters(4) sra 6) xor (letters(4) sra 11) xor (letters(4) sra 25);
 					ch:=(letters(4) and letters(5)) xor ((not letters(4)) and letters(6));
-					temp:=h + s1 + ch + letters + k(i) + vwords(i);
+					temp:=letters(7) + s1 + ch + letters + k(i) + vwords(i);
 					letters(3):=letters(3)+temp;
 					s0:=(letters(0) sra 2) xor (letters(0) sra 13) xor (letters(0) sra 22);
 					maj:=(letters(0) and (letters(1) xor letters(2))) xor (letters(1) and letters(2));
