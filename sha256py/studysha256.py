@@ -1,4 +1,5 @@
 import struct
+import array
 
 SHA_BLOCKSIZE = 64
 SHA_DIGESTSIZE = 32
@@ -28,6 +29,9 @@ def sha_transform(sha_info):
     W = []
     
     d = sha_info['data']
+    #print('bloopblop')
+    #print(d)
+    #print(len(d))
     for i in xrange(0,16):
         W.append( (d[4*i]<<24) + (d[4*i+1]<<16) + (d[4*i+2]<<8) + d[4*i+3])
     
@@ -157,7 +161,6 @@ def sha_update(sha_info, buffer):
         # copy buffer
         for x in enumerate(buffer[buffer_idx:buffer_idx+i]):
             sha_info['data'][sha_info['local']+x[0]] = struct.unpack('B', x[1])[0]
-        print(sha_info)
         count -= i
         buffer_idx += i
         
@@ -249,8 +252,14 @@ class sha224(sha256):
         return new
 
 def test():
-    a_str = "just a test string"
-    
+    a_str= 'just a test string'
+    hexvalue='02000000C2E26FD54C50F4EC37BA8266222A8917EB8AE7A62FBAB0F871000000000000004F80C57D2DB0CF542E5ACA2138C2D1C3A5091643F4463F7317447B112075B5F06D20A051E97F011A00000000'
+    a_str=array.array('B',hexvalue.decode('hex'))
+    resultthing=sha256(a_str).digest()
+    print(len(resultthing))
+    for char in resultthing:
+        print(hex(ord(char)))
+    print('bla')
     assert 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' == sha256().hexdigest()
     assert 'd7b553c6f09ac85d142415f857c5310f3bbbe7cdd787cce4b985acedd585266f' == sha256(a_str).hexdigest()
     assert '8113ebf33c97daa9998762aacafe750c7cefc2b2f173c90c59663a57fe626f21' == sha256(a_str*7).hexdigest()
