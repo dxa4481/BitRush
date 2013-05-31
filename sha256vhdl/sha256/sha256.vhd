@@ -60,7 +60,7 @@ begin
 			);
 			
 			
-		firstchunkhash : messagechunk
+		first512hash : messagechunk
 		port map (
 			clk            => clk,
 			messagechunk   => smessagechunk1,
@@ -75,18 +75,18 @@ begin
 			chunkhash      => firstchunkhash
 			);
 			
-		secondchunkhash : messagechunk
+		second512hash : messagechunk
 		port map (
 			clk            => clk,
 			messagechunk   => smessagechunk2,
-			h0             => firstchuckhash(255 downto 223),
-			h1             => firstchuckhash(223 downto 191),
-			h2             => firstchuckhash(191 downto 159),
-			h3             => firstchuckhash(159 downto 127),
-			h4      			=> firstchuckhash(127 downto 95),
-			h5        		=> firstchuckhash(95 downto 63),
-			h6       		=> firstchuckhash(63 downto 31),
-			h7        		=> firstchuckhash(31 downto 0),
+			h0             => firstchunkhash(255 downto 224),
+			h1             => firstchunkhash(223 downto 192),
+			h2             => firstchunkhash(191 downto 160),
+			h3             => firstchunkhash(159 downto 128),
+			h4      			=> firstchunkhash(127 downto 96),
+			h5        		=> firstchunkhash(95 downto 64),
+			h6       		=> firstchunkhash(63 downto 32),
+			h7        		=> firstchunkhash(31 downto 0),
 			chunkhash      => hashout
 			);
 			

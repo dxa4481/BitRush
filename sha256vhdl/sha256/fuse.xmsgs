@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="258" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 80: Cannot convert type <arg fmt="%s" index="1">std_logic_vector</arg> to type <arg fmt="%s" index="2">bit_vector</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="37" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 80: &quot;<arg fmt="%s" index="1">bit_vector</arg>&quot; cannot be used in this expression.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="622" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 80: Near <arg fmt="%s" index="1">std_logic_vector</arg> ; type conversion expression type cannot be determined uniquely
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 81: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;sra&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;sra&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 82: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 113: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;sra&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;sra&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 115: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 116: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 117: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;sra&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;sra&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 119: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 148: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 149: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 150: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 151: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 152: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 153: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 154: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="294" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 155: Cannot update &apos;in&apos; object <arg fmt="%s" index="1">h7</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1731" delta="unknown" >"C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/messagechunk.vhd" Line 155: found &apos;<arg fmt="%d" index="1">0</arg>&apos; definitions of operator <arg fmt="%s" index="2">&quot;+&quot;</arg>, cannot determine exact overloaded matching definition for <arg fmt="%s" index="2">&quot;+&quot;</arg>
+</msg>
+
+</messages>
+

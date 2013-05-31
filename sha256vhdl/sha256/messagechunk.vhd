@@ -19,7 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 --This takes a 512 chunk and returns the hash for it
 
@@ -38,6 +38,7 @@ architecture Behavioral of messagechunk is
 		--signal letters : letterarray:= (x"6a09e667", x"bb67ae85", x"3c6ef372", x"a54ff53a", x"510e527f", x"9b05688c", x"1f83d9ab", x"5be0cd19");
 		signal wordsext : arrayofvectors64;
 		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0);
+		signal test : arrayofvectors64;
 		type k_array is array(0 to 63) of STD_LOGIC_VECTOR(31 downto 0);
 		constant K : k_array := (
 			x"428a2f98", x"71374491", x"b5c0fbcf", x"e9b5dba5", x"3956c25b", x"59f111f1", x"923f82a4", x"ab1c5ed5",
@@ -55,9 +56,25 @@ begin
 		process(clk)
 			begin
 			if (clk'event and clk = '1') then
-				for I in 0 to 15 loop
-					wordsext(I) <= messagechunk(511-I*32 downto 480-I*32);
-				end loop;
+				wordsext(0)<= messagechunk(511 downto 480);
+				wordsext(1)<= messagechunk(479 downto 448);
+				wordsext(2)<= messagechunk(447 downto 416);
+				wordsext(3)<= messagechunk(415 downto 384);
+				wordsext(4)<= messagechunk(383 downto 352);
+				wordsext(5)<= messagechunk(351 downto 320);
+				wordsext(6)<= messagechunk(319 downto 288);
+				wordsext(7)<= messagechunk(287 downto 256);
+				wordsext(8)<= messagechunk(255 downto 224);
+				wordsext(9)<= messagechunk(223 downto 192);
+				wordsext(10)<= messagechunk(191 downto 160);
+				wordsext(11)<= messagechunk(159 downto 128);
+				wordsext(12)<= messagechunk(127 downto 96);
+				wordsext(13)<= messagechunk(95 downto 64);
+				wordsext(14)<= messagechunk(63 downto 32);
+				wordsext(15)<= messagechunk(31 downto 0);
+--				for I in 0 to 15 loop
+--					wordsext(I) <= messagechunk(511-I*32 downto 480-I*32);
+--				end loop;
 			end if;
 		end process;
 		
@@ -77,8 +94,8 @@ begin
 --   s1 := (w[i-2] rightrotate 17) xor (w[i-2] rightrotate 19) xor (w[i-2] rightshift 10)
 --   w[i] := w[i-16] + s0 + w[i-7] + s1
 				for i in 16 to 63 loop
-					s0 := (vwords(i-15) sra 7) xor (vwords(i-15) sra 18) xor (vwords(i-15) srl 3);
-					s1 := (vwords(i-2) sra 17) xor (vwords(i-2) sra 19) xor (vwords(i-2) srl 10);
+					s0 := (vwords(i-15)(6 downto 0)&vwords(i-15)(31 downto 7)) xor (vwords(i-15)(17 downto 0)&vwords(i-15)(31 downto 18)) xor ("000"&vwords(i-15)(31 downto 3));
+					s1 := (vwords(i-2)(16 downto 0)&vwords(i-2)(31 downto 17)) xor (vwords(i-2)(18 downto 0)&vwords(i-2)(31 downto 19)) xor ("0000000000"&vwords(i-2)(31 downto 10));
 					vwords(i):=vwords(i-16)+s0+vwords(i-7)+s1;
 				end loop;
 				
@@ -109,15 +126,20 @@ begin
 --   S0 := (a rightrotate 2) xor (a rightrotate 13) xor (a rightrotate 22)
 --   maj := (a and (b xor c)) xor (b and c)
 --   temp := temp + S0 + maj
+
+
+
+        
 				for i in 0 to 63 loop
-					s1:=(letters(4) sra 6) xor (letters(4) sra 11) xor (letters(4) sra 25);
+					s1:=(letters(4)(5 downto 0)&letters(4)(31 downto 6)) xor (letters(4)(10 downto 0)&letters(4)(31 downto 11)) xor (letters(4)(24 downto 0)&letters(4)(31 downto 25));
 					ch:=(letters(4) and letters(5)) xor ((not letters(4)) and letters(6));
-					temp:=letters(7) + s1 + ch + letters + k(i) + vwords(i);
+					temp:=letters(7) + s1 + ch + K(i) + vwords(i);
 					letters(3):=letters(3)+temp;
-					s0:=(letters(0) sra 2) xor (letters(0) sra 13) xor (letters(0) sra 22);
+					s0:=(letters(0)(1 downto 0)&letters(0)(31 downto 2)) xor (letters(0)(12 downto 0)&letters(0)(31 downto 13)) xor (letters(0)(21 downto 0)&letters(0)(31 downto 22));
 					maj:=(letters(0) and (letters(1) xor letters(2))) xor (letters(1) and letters(2));
 					temp:=temp+s0 + maj;
 				end loop;
+				test<=vwords;
 
 --   h := g
 --   g := f
@@ -127,6 +149,7 @@ begin
 --   c := b
 --   b := a
 --   a := temp
+				
 				letters(7):=letters(6);
 				letters(6):=letters(5);
 				letters(5):=letters(4);
@@ -145,6 +168,7 @@ begin
 -- h5 := h5 + f
 -- h6 := h6 + g
 -- h7 := h7 + h
+
 				sh0<=h0 + letters(0);
 				sh1<=h1 + letters(1);
 				sh2<=h2 + letters(2);
@@ -152,10 +176,8 @@ begin
 				sh4<=h4 + letters(4);
 				sh5<=h5 + letters(5);
 				sh6<=h6 + letters(6);
-				h7<=h7 + letters(7);
-				
-
-			wordsext <= vwords;				
+				sh7<=h7 + letters(7);
+						
 			end if;
 		end process;
 		chunkhash<= sh0 & sh1 & sh2 & sh3 & sh4 & sh5 & sh6 & sh7;

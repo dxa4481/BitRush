@@ -1,0 +1,4 @@
+vhdl isim_temp "preproc.vhd"
+vhdl isim_temp "messagechunk.vhd"
+vhdl isim_temp "sha256.vhd"
+vhdl isim_temp "shatb.vhd"
