@@ -1,0 +1,385 @@
+# Reading E:/modelsim/tcl/vsim/pref.tcl 
+# do {testbench.fdo} 
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity preproc
+# -- Compiling architecture Behavioral of preproc
+# ** Error: preproc.vhd(41): (vcom-1272) Length of expected is 1024; length of actual is 1025.
+# 
+# ** Error: preproc.vhd(45): VHDL Compiler exiting
+# ** Error: E:/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./testbench.fdo line 23
+# E:/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "preproc.vhd""
+do {testbench.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity preproc
+# -- Compiling architecture Behavioral of preproc
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity messagechunk
+# -- Compiling architecture Behavioral of messagechunk
+# ** Error: messagechunk.vhd(39): (vcom-1136) Unknown identifier "arrayofvectors64".
+# 
+# ** Error: messagechunk.vhd(67): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: messagechunk.vhd(69): (vcom-1136) Unknown identifier "arrayofvectors64".
+# 
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(114): Target type ieee.std_logic_1164.STD_LOGIC in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(115): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(116): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(116): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(118): Target type ieee.std_logic_1164.STD_LOGIC in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(119): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(119): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(119): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(137): Target type ieee.std_logic_1164.STD_LOGIC_VECTOR in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: messagechunk.vhd(148): Cannot drive signal 'h0' of mode IN.
+# ** Error: messagechunk.vhd(148): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(148): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(149): Cannot drive signal 'h1' of mode IN.
+# ** Error: messagechunk.vhd(149): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(149): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(150): Cannot drive signal 'h2' of mode IN.
+# ** Error: messagechunk.vhd(150): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(150): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(151): Cannot drive signal 'h3' of mode IN.
+# ** Error: messagechunk.vhd(151): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(151): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(152): Cannot drive signal 'h4' of mode IN.
+# ** Error: messagechunk.vhd(152): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(152): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(153): Cannot drive signal 'h5' of mode IN.
+# ** Error: messagechunk.vhd(153): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(153): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(154): Cannot drive signal 'h6' of mode IN.
+# ** Error: messagechunk.vhd(154): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(154): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(155): Cannot drive signal 'h7' of mode IN.
+# ** Error: messagechunk.vhd(155): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(155): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(162): VHDL Compiler exiting
+# ** Error: E:/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./testbench.fdo line 24
+# E:/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "messagechunk.vhd""
+do {testbench.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity preproc
+# -- Compiling architecture Behavioral of preproc
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity messagechunk
+# -- Compiling architecture Behavioral of messagechunk
+# ** Error: messagechunk.vhd(67): Index constraint cannot be applied to non-array type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(82): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(114): Target type ieee.std_logic_1164.STD_LOGIC in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(115): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(116): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(116): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(118): Target type ieee.std_logic_1164.STD_LOGIC in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(119): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(119): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(119): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(137): Target type ieee.std_logic_1164.STD_LOGIC_VECTOR in variable assignment is different from expression type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: messagechunk.vhd(148): Cannot drive signal 'h0' of mode IN.
+# ** Error: messagechunk.vhd(148): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(148): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(149): Cannot drive signal 'h1' of mode IN.
+# ** Error: messagechunk.vhd(149): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(149): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(150): Cannot drive signal 'h2' of mode IN.
+# ** Error: messagechunk.vhd(150): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(150): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(151): Cannot drive signal 'h3' of mode IN.
+# ** Error: messagechunk.vhd(151): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(151): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(152): Cannot drive signal 'h4' of mode IN.
+# ** Error: messagechunk.vhd(152): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(152): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(153): Cannot drive signal 'h5' of mode IN.
+# ** Error: messagechunk.vhd(153): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(153): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(154): Cannot drive signal 'h6' of mode IN.
+# ** Error: messagechunk.vhd(154): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(154): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(155): Cannot drive signal 'h7' of mode IN.
+# ** Error: messagechunk.vhd(155): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(155): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(162): VHDL Compiler exiting
+# ** Error: E:/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./testbench.fdo line 24
+# E:/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "messagechunk.vhd""
+do {testbench.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity preproc
+# -- Compiling architecture Behavioral of preproc
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity messagechunk
+# -- Compiling architecture Behavioral of messagechunk
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(82): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(115): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(116): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(116): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(119): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(119): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(119): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(148): Cannot drive signal 'h0' of mode IN.
+# ** Error: messagechunk.vhd(148): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(148): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(149): Cannot drive signal 'h1' of mode IN.
+# ** Error: messagechunk.vhd(149): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(149): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(150): Cannot drive signal 'h2' of mode IN.
+# ** Error: messagechunk.vhd(150): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(150): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(151): Cannot drive signal 'h3' of mode IN.
+# ** Error: messagechunk.vhd(151): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(151): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(152): Cannot drive signal 'h4' of mode IN.
+# ** Error: messagechunk.vhd(152): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(152): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(153): Cannot drive signal 'h5' of mode IN.
+# ** Error: messagechunk.vhd(153): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(153): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(154): Cannot drive signal 'h6' of mode IN.
+# ** Error: messagechunk.vhd(154): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(154): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(155): Cannot drive signal 'h7' of mode IN.
+# ** Error: messagechunk.vhd(155): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(155): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(162): VHDL Compiler exiting
+# ** Error: E:/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./testbench.fdo line 24
+# E:/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "messagechunk.vhd""
+do {testbench.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity preproc
+# -- Compiling architecture Behavioral of preproc
+# Model Technology ModelSim PE Student Edition vcom 10.2b Compiler 2013.05 May 17 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity messagechunk
+# -- Compiling architecture Behavioral of messagechunk
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(80): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(80): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): No feasible entries for infix operator "srl".
+# ** Error: messagechunk.vhd(81): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(81): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(82): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(82): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(113): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(113): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(115): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(115): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(116): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(116): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): No feasible entries for infix operator "sra".
+# ** Error: messagechunk.vhd(117): Bad expression in left operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad expression in right operand of infix expression "xor".
+# ** Error: messagechunk.vhd(117): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(119): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(119): Bad expression in left operand of infix expression "+".
+# ** Error: messagechunk.vhd(119): Bad right hand side (infix expression) in variable assignment.
+# ** Error: messagechunk.vhd(148): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(148): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(149): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(149): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(150): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(150): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(151): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(151): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(152): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(152): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(153): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(153): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(154): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(154): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(155): Cannot drive signal 'h7' of mode IN.
+# ** Error: messagechunk.vhd(155): No feasible entries for infix operator "+".
+# ** Error: messagechunk.vhd(155): Type error resolving infix expression "+" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: messagechunk.vhd(162): VHDL Compiler exiting
+# ** Error: E:/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./testbench.fdo line 24
+# E:/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "messagechunk.vhd""

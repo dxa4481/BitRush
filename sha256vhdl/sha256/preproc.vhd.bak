@@ -38,7 +38,7 @@ architecture Behavioral of preproc is
 		signal zeros : STD_LOGIC_VECTOR(319 downto 0) := (others=>'0');
 		signal procmessage : STD_LOGIC_VECTOR(1023 downto 0);
 begin
-		procmessage <= message & "1000" & zeros & x"000000000000040";
+		procmessage <= message & "1" & zeros & x"0000000000000040";
 		messagechunk1 <= procmessage(1023 downto 512);
 		messagechunk2 <= procmessage(511 downto 0);
 

@@ -1,0 +1,3 @@
+work	"messagechunk.vhd"
+work	"preproc.vhd"
+work	"sha256.vhd"

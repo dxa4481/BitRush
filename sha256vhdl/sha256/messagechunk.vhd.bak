@@ -37,7 +37,7 @@ architecture Behavioral of messagechunk is
 
 		--signal letters : letterarray:= (x"6a09e667", x"bb67ae85", x"3c6ef372", x"a54ff53a", x"510e527f", x"9b05688c", x"1f83d9ab", x"5be0cd19");
 		signal wordsext : arrayofvectors64;
-		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0);
+		
 		type k_array is array(0 to 63) of STD_LOGIC_VECTOR(31 downto 0);
 		constant K : k_array := (
 			x"428a2f98", x"71374491", x"b5c0fbcf", x"e9b5dba5", x"3956c25b", x"59f111f1", x"923f82a4", x"ab1c5ed5",
@@ -145,19 +145,19 @@ begin
 -- h5 := h5 + f
 -- h6 := h6 + g
 -- h7 := h7 + h
-				sh0<=h0 + letters(0);
-				sh1<=h1 + letters(1);
-				sh2<=h2 + letters(2);
-				sh3<=h3 + letters(3);
-				sh4<=h4 + letters(4);
-				sh5<=h5 + letters(5);
-				sh6<=h6 + letters(6);
+				h0<=h0 + letters(0);
+				h1<=h1 + letters(1);
+				h2<=h2 + letters(2);
+				h3<=h3 + letters(3);
+				h4<=h4 + letters(4);
+				h5<=h5 + letters(5);
+				h6<=h6 + letters(6);
 				h7<=h7 + letters(7);
 				
 
 			wordsext <= vwords;				
 			end if;
 		end process;
-		chunkhash<= sh0 & sh1 & sh2 & sh3 & sh4 & sh5 & sh6 & sh7;
+		chunkhash<= h0 & h1 & h2 & h3 & h4 & h5 & h6 & h7;
 end Behavioral;
 

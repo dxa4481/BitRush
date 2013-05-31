@@ -1,0 +1,67 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256
+!i10d 8192
+!i10e 25
+!i10f 100
+Emessagechunk
+w1369959082
+Z1 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z2 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z4 dC:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256
+8messagechunk.vhd
+Fmessagechunk.vhd
+l0
+L26
+VP5Aanb@o>kVF^D0z;H?Xh3
+!s100 XC0D:Sh@aOISJ]>jn3dD>3
+Z5 OP;C;10.2b;57
+31
+Z6 !s110 1369959087
+!i10b 1
+!s108 1369959087.220000
+!s90 -reportprogress|300|-explicit|-93|messagechunk.vhd|
+!s107 messagechunk.vhd|
+Z7 o-explicit -93 -O0
+Z8 tExplicit 1
+Epreproc
+Z9 w1369958546
+R2
+R3
+R4
+Z10 8preproc.vhd
+Z11 Fpreproc.vhd
+l0
+L32
+VfWzE3[A@<JmbTne>DS2OQ3
+R5
+31
+R6
+Z12 !s108 1369959086.932000
+Z13 !s90 -reportprogress|300|-explicit|-93|preproc.vhd|
+Z14 !s107 preproc.vhd|
+R7
+R8
+!s100 5=UkL`?R^4XPE5<2l7JcX0
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 7 preproc 0 22 fWzE3[A@<JmbTne>DS2OQ3
+l40
+L37
+VW4z38`U8>eYJ9o0g_>3;_0
+!s100 N;4_Ab=l<J^R0P<JzaQ`V0
+R5
+31
+R6
+R12
+R13
+R14
+R7
+R8
+!i10b 1

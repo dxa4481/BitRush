@@ -21,54 +21,59 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="sha256.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="testbench.fdo"/>
+  </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1369812654">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1369812654" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1369812654">
+    <transform xil_pn:end_ts="1369958504" xil_pn:in_ck="1001604086236008804" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1369958504">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="messagechunk.vhd"/>
+      <outfile xil_pn:name="preproc.vhd"/>
+      <outfile xil_pn:name="sha256.vhd"/>
+      <outfile xil_pn:name="shatb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3150931036567041" xil_pn:start_ts="1369812654">
+    <transform xil_pn:end_ts="1369958504" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4434870115928851094" xil_pn:start_ts="1369958504">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4261939554256980547" xil_pn:start_ts="1369812654">
+    <transform xil_pn:end_ts="1369958504" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3122580995542427112" xil_pn:start_ts="1369958504">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1369812654" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3645977273260071486" xil_pn:start_ts="1369812654">
+    <transform xil_pn:end_ts="1369958119" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3369828083586987619" xil_pn:start_ts="1369958119">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1369812654" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1369812654">
+    <transform xil_pn:end_ts="1369958504" xil_pn:in_ck="1001604086236008804" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1369958504">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="messagechunk.vhd"/>
+      <outfile xil_pn:name="preproc.vhd"/>
+      <outfile xil_pn:name="sha256.vhd"/>
+      <outfile xil_pn:name="shatb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1369812658" xil_pn:in_ck="-633624757278340498" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1369812654">
-      <status xil_pn:value="FailedRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+    <transform xil_pn:end_ts="1369958507" xil_pn:in_ck="1001604086236008804" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1369958504">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
+      <outfile xil_pn:name="testbench.fdo"/>
     </transform>
   </transforms>
 
