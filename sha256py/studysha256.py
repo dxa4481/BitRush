@@ -29,15 +29,14 @@ def sha_transform(sha_info):
     W = []
     
     d = sha_info['data']
-    #print('bloopblop')
-    #print(d)
-    #print(len(d))
+    #for dec in d:
+        #print(hex(dex))
     for i in xrange(0,16):
         W.append( (d[4*i]<<24) + (d[4*i+1]<<16) + (d[4*i+2]<<8) + d[4*i+3])
-    
     for i in xrange(16,64):
         W.append( (Gamma1(W[i - 2]) + W[i - 7] + Gamma0(W[i - 15]) + W[i - 16]) & 0xffffffff )
-    
+    count=0
+   
     ss = sha_info['digest'][:]
     
     def RND(a,b,c,d,e,f,g,h,i,ki):
@@ -185,6 +184,7 @@ def sha_update(sha_info, buffer):
     sha_info['local'] = count
 
 def sha_final(sha_info):
+
     lo_bit_count = sha_info['count_lo']
     hi_bit_count = sha_info['count_hi']
     count = (lo_bit_count >> 3) & 0x3f
@@ -207,7 +207,7 @@ def sha_final(sha_info):
     sha_info['data'][61] = (lo_bit_count >> 16) & 0xff
     sha_info['data'][62] = (lo_bit_count >>  8) & 0xff
     sha_info['data'][63] = (lo_bit_count >>  0) & 0xff
-    
+
     sha_transform(sha_info)
     
     dig = []
@@ -250,23 +250,16 @@ class sha224(sha256):
         new = sha224.__new__(sha224)
         new._sha = self._sha.copy()
         return new
-
+def toprint(thingtoprint):
+    for char in thingtoprint:
+        print(hex(ord(char)))
 def test():
-    a_str= 'just a test string'
     hexvalue='02000000C2E26FD54C50F4EC37BA8266222A8917EB8AE7A62FBAB0F871000000000000004F80C57D2DB0CF542E5ACA2138C2D1C3A5091643F4463F7317447B112075B5F06D20A051E97F011A00000000'
     a_str=array.array('B',hexvalue.decode('hex'))
     resultthing=sha256(a_str).digest()
-    print(len(resultthing))
-    for char in resultthing:
-        print(hex(ord(char)))
-    print('bla')
-    assert 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' == sha256().hexdigest()
-    assert 'd7b553c6f09ac85d142415f857c5310f3bbbe7cdd787cce4b985acedd585266f' == sha256(a_str).hexdigest()
-    assert '8113ebf33c97daa9998762aacafe750c7cefc2b2f173c90c59663a57fe626f21' == sha256(a_str*7).hexdigest()
-    
-    s = sha256(a_str)
-    s.update(a_str)
-    assert '03d9963e05a094593190b6fc794cb1a3e1ac7d7883f0b5855268afeccc70d461' == s.hexdigest()
+    toprint(resultthing)
+
+
 
 if __name__ == "__main__":
     test()
