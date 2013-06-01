@@ -1,0 +1,5 @@
+vhdl work "C:\Users\Admin\Documents\GitHub\BitRush\sha256vhdl\sha256\array64.vhd"
+vhdl work "C:\Users\Admin\Documents\GitHub\BitRush\sha256vhdl\sha256\extendto64.vhd"
+vhdl work "C:\Users\Admin\Documents\GitHub\BitRush\sha256vhdl\sha256\preproc.vhd"
+vhdl work "C:\Users\Admin\Documents\GitHub\BitRush\sha256vhdl\sha256\messagechunk.vhd"
+vhdl work "C:\Users\Admin\Documents\GitHub\BitRush\sha256vhdl\sha256\sha256.vhd"

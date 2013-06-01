@@ -20,6 +20,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use work.array64.all;
 
 --This takes a 512 chunk and returns the hash for it
 
@@ -32,11 +33,11 @@ end messagechunk;
 
 architecture Behavioral of messagechunk is
 
-		type arrayofvectors64 is array(0 to 63) of STD_LOGIC_VECTOR(31 downto 0) ;
 		type letterarray is array(0 to 7) of STD_LOGIC_VECTOR(31 downto 0);
 
 		--signal letters : letterarray:= (x"6a09e667", x"bb67ae85", x"3c6ef372", x"a54ff53a", x"510e527f", x"9b05688c", x"1f83d9ab", x"5be0cd19");
 		signal wordsext : arrayofvectors64;
+		
 		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0);
 		type k_array is array(0 to 63) of STD_LOGIC_VECTOR(31 downto 0);
 		constant K : k_array := (
@@ -49,54 +50,40 @@ architecture Behavioral of messagechunk is
 			x"19a4c116", x"1e376c08", x"2748774c", x"34b0bcb5", x"391c0cb3", x"4ed8aa4a", x"5b9cca4f", x"682e6ff3",
 			x"748f82ee", x"78a5636f", x"84c87814", x"8cc70208", x"90befffa", x"a4506ceb", x"bef9a3f7", x"c67178f2"
 		);			
-		
+		 COMPONENT extendto64
+				Port(	clk: in STD_LOGIC;
+						messagechunk: in STD_LOGIC_VECTOR(511 downto 0);
+						extpart : out arrayofvectors64);
+		 END COMPONENT;		
 begin
 --break chunk into sixteen 32-bit big-endian words w[0..15]
-		process(clk)
-			begin
-			if (clk'event and clk = '1') then
-				wordsext(0)<= messagechunk(511 downto 480);
-				wordsext(1)<= messagechunk(479 downto 448);
-				wordsext(2)<= messagechunk(447 downto 416);
-				wordsext(3)<= messagechunk(415 downto 384);
-				wordsext(4)<= messagechunk(383 downto 352);
-				wordsext(5)<= messagechunk(351 downto 320);
-				wordsext(6)<= messagechunk(319 downto 288);
-				wordsext(7)<= messagechunk(287 downto 256);
-				wordsext(8)<= messagechunk(255 downto 224);
-				wordsext(9)<= messagechunk(223 downto 192);
-				wordsext(10)<= messagechunk(191 downto 160);
-				wordsext(11)<= messagechunk(159 downto 128);
-				wordsext(12)<= messagechunk(127 downto 96);
-				wordsext(13)<= messagechunk(95 downto 64);
-				wordsext(14)<= messagechunk(63 downto 32);
-				wordsext(15)<= messagechunk(31 downto 0);
---				for I in 0 to 15 loop
---					wordsext(I) <= messagechunk(511-I*32 downto 480-I*32);
---				end loop;
-			end if;
-		end process;
 		
+		
+		 extender: extendto64 PORT MAP(
+					clk => clk,
+					messagechunk => messagechunk,
+					extpart => wordsext
+		 );
 
 		process(clk)
 			variable s0,s1  	: std_logic_vector (31 downto 0);
 			variable ch,temp,maj : std_logic_vector (31 downto 0);
 			--unsure if this is the correct size for temp
-			variable vwords : arrayofvectors64;
+			variable vwords : arrayofvectors64:= wordsext;
 			variable letters : letterarray;
 			begin
 			if (clk'event and clk = '1') then
-				vwords := wordsext;
+					vwords := wordsext;
 --	Extend the sixteen 32-bit words into sixty-four 32-bit words:
 -- for i from 16 to 63
 --   s0 := (w[i-15] rightrotate 7) xor (w[i-15] rightrotate 18) xor (w[i-15] rightshift 3)
 --   s1 := (w[i-2] rightrotate 17) xor (w[i-2] rightrotate 19) xor (w[i-2] rightshift 10)
 --   w[i] := w[i-16] + s0 + w[i-7] + s1
-				for i in 16 to 63 loop
-					s0 := (vwords(i-15)(6 downto 0)&vwords(i-15)(31 downto 7)) xor (vwords(i-15)(17 downto 0)&vwords(i-15)(31 downto 18)) xor ("000"&vwords(i-15)(31 downto 3));
-					s1 := (vwords(i-2)(16 downto 0)&vwords(i-2)(31 downto 17)) xor (vwords(i-2)(18 downto 0)&vwords(i-2)(31 downto 19)) xor ("0000000000"&vwords(i-2)(31 downto 10));
-					vwords(i):=vwords(i-16)+s0+vwords(i-7)+s1;
-				end loop;
+--				for i in 16 to 63 loop
+--					s0 := (vwords(i-15)(6 downto 0)&vwords(i-15)(31 downto 7)) xor (vwords(i-15)(17 downto 0)&vwords(i-15)(31 downto 18)) xor ("000"&vwords(i-15)(31 downto 3));
+--					s1 := (vwords(i-2)(16 downto 0)&vwords(i-2)(31 downto 17)) xor (vwords(i-2)(18 downto 0)&vwords(i-2)(31 downto 19)) xor ("0000000000"&vwords(i-2)(31 downto 10));
+--					vwords(i):=vwords(i-16)+s0+vwords(i-7)+s1;
+--				end loop;
 		
 -- Initialize hash value for this chunk:
 -- a := h0
@@ -107,7 +94,6 @@ begin
 -- f := h5
 -- g := h6
 -- h := h7				
-				
 				letters(0):=h0;
 				letters(1):=h1;
 				letters(2):=h2;
@@ -125,10 +111,7 @@ begin
 --   S0 := (a rightrotate 2) xor (a rightrotate 13) xor (a rightrotate 22)
 --   maj := (a and (b xor c)) xor (b and c)
 --   temp := temp + S0 + maj
-
-
-
-        
+ 
 				for i in 0 to 63 loop
 					s1:=(letters(4)(5 downto 0)&letters(4)(31 downto 6)) xor (letters(4)(10 downto 0)&letters(4)(31 downto 11)) xor (letters(4)(24 downto 0)&letters(4)(31 downto 25));
 					ch:=(letters(4) and letters(5)) xor ((not letters(4)) and letters(6));
@@ -145,10 +128,8 @@ begin
 					letters(3):=letters(2);
 					letters(2):=letters(1);
 					letters(1):=letters(0);
-					letters(0):=temp;
-					
+					letters(0):=temp;					
 				end loop;
-	
 
 --   h := g
 --   g := f

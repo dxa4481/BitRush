@@ -1,0 +1,5 @@
+vhdl work "array64.vhd"
+vhdl work "extendto64.vhd"
+vhdl work "preproc.vhd"
+vhdl work "messagechunk.vhd"
+vhdl work "sha256.vhd"
