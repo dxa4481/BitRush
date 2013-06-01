@@ -36,7 +36,7 @@ entity extendto64 is
 	
 		Port(	clk: in STD_LOGIC;
 				messagechunk: in STD_LOGIC_VECTOR(511 downto 0);
-				extpart : out arrayofvectors64);
+				extpart : out arrayofvectors64 := (others=> (others=> '0')));
 end extendto64;
 
 architecture Behavioral of extendto64 is

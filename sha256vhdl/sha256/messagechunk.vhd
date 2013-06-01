@@ -28,7 +28,7 @@ entity messagechunk is
 		Port(	clk: in STD_LOGIC;
 				messagechunk: in STD_LOGIC_VECTOR(511 downto 0);
 				h0,h1,h2,h3,h4,h5,h6,h7: in STD_LOGIC_VECTOR(31 downto 0);
-				chunkhash: out STD_LOGIC_VECTOR(255 downto 0));
+				chunkhash: out STD_LOGIC_VECTOR(255 downto 0):= (others=>'0'));
 end messagechunk;
 
 architecture Behavioral of messagechunk is
@@ -38,7 +38,7 @@ architecture Behavioral of messagechunk is
 		--signal letters : letterarray:= (x"6a09e667", x"bb67ae85", x"3c6ef372", x"a54ff53a", x"510e527f", x"9b05688c", x"1f83d9ab", x"5be0cd19");
 		signal wordsext : arrayofvectors64;
 		
-		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0);
+		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0) := (others=>'0');
 		type k_array is array(0 to 63) of STD_LOGIC_VECTOR(31 downto 0);
 		constant K : k_array := (
 			x"428a2f98", x"71374491", x"b5c0fbcf", x"e9b5dba5", x"3956c25b", x"59f111f1", x"923f82a4", x"ab1c5ed5",

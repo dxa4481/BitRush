@@ -22,17 +22,33 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="sha256.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="compxlib.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="messagechunk_stx_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="sha256.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="sha256.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="sha256.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="sha256.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="sha256.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="sha256.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="sha256.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sha256.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="sha256.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="sha256.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="sha256.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="sha256_envsettings.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="sha256_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="sha256_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="sha256_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="sha256_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="sha256_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="sha256_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="sha256_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="sha256_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="sha256_usage.xml"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sha256_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="sha256_xst.xrpt"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="testbench.fdo"/>
@@ -41,6 +57,7 @@
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
     <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -54,13 +71,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1370122929" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1370122929">
+    <transform xil_pn:end_ts="1370125255" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1370125255">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="array64.vhd"/>
       <outfile xil_pn:name="extendto64.vhd"/>
       <outfile xil_pn:name="messagechunk.vhd"/>
@@ -80,14 +93,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1370122929" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1370122929">
+    <transform xil_pn:end_ts="1370125255" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1370125255">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="array64.vhd"/>
       <outfile xil_pn:name="extendto64.vhd"/>
       <outfile xil_pn:name="messagechunk.vhd"/>
@@ -95,13 +103,10 @@
       <outfile xil_pn:name="sha256.vhd"/>
       <outfile xil_pn:name="shatb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1370122932" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1370122929">
+    <transform xil_pn:end_ts="1370125258" xil_pn:in_ck="-4286814030018081950" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1370125255">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="testbench.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
@@ -135,20 +140,49 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1370120513" xil_pn:in_ck="9164552161380066272" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7210506161627474938" xil_pn:start_ts="1370120422">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1370126157" xil_pn:in_ck="9164552161380066272" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="7210506161627474938" xil_pn:start_ts="1370125502">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="sha256.lso"/>
+      <outfile xil_pn:name="sha256.ngc"/>
+      <outfile xil_pn:name="sha256.ngr"/>
+      <outfile xil_pn:name="sha256.prj"/>
+      <outfile xil_pn:name="sha256.stx"/>
+      <outfile xil_pn:name="sha256.syr"/>
+      <outfile xil_pn:name="sha256.xst"/>
+      <outfile xil_pn:name="sha256_vhdl.prj"/>
+      <outfile xil_pn:name="sha256_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
     <transform xil_pn:end_ts="1370120308" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-6180941087874556943" xil_pn:start_ts="1370120308">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1370126184" xil_pn:in_ck="5487787904880831" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1051649224041389910" xil_pn:start_ts="1370126157">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="sha256.bld"/>
+      <outfile xil_pn:name="sha256.ngd"/>
+      <outfile xil_pn:name="sha256_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1370126310" xil_pn:in_ck="5487787904880832" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-6349267131326700252" xil_pn:start_ts="1370126184">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="sha256.pcf"/>
+      <outfile xil_pn:name="sha256_map.map"/>
+      <outfile xil_pn:name="sha256_map.mrp"/>
+      <outfile xil_pn:name="sha256_map.ncd"/>
+      <outfile xil_pn:name="sha256_map.ngm"/>
+      <outfile xil_pn:name="sha256_map.xrpt"/>
+      <outfile xil_pn:name="sha256_summary.xml"/>
+      <outfile xil_pn:name="sha256_usage.xml"/>
     </transform>
   </transforms>
 
