@@ -1,0 +1,157 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    02:25:25 06/02/2013 
+-- Design Name: 
+-- Module Name:    pythonjob - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use work.array64.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity pythonjob is
+			Port(	clk: in STD_LOGIC;
+					letters_out,hvalues: out letterarray;
+					temp_out,chunk32_4,chunk32_5,chunk32_6,chunk32_7,chunk32_8,chunk32_9,chunk32_10,chunk32_11,chunk32_12,chunk32_13,chunk32_14,chunk32_15,chunk32_16,chunk32_17: out STD_LOGIC_VECTOR(31 downto 0));
+end pythonjob;
+
+architecture Behavioral of pythonjob is
+
+		COMPONENT messagechunk
+			Port(	clk: in STD_LOGIC;
+					messagechunk: in STD_LOGIC_VECTOR(511 downto 0);
+					h0,h1,h2,h3,h4,h5,h6,h7: in STD_LOGIC_VECTOR(31 downto 0);
+					chunkhash: out STD_LOGIC_VECTOR(255 downto 0));
+		END COMPONENT;
+		
+		COMPONENT preproc
+			Port(	message: in STD_LOGIC_VECTOR(639 downto 0);
+					messagechunk1,messagechunk2: out STD_LOGIC_VECTOR(511 downto 0));
+		END COMPONENT;	
+		 COMPONENT extendto64
+				Port(	clk: in STD_LOGIC;
+						messagechunk: in STD_LOGIC_VECTOR(511 downto 0);
+						extpart : out arrayofvectors64);
+		 END COMPONENT;			
+		
+		signal smessagechunk1,smessagechunk2: STD_LOGIC_VECTOR(511 downto 0);
+		signal firstchunkhash: STD_LOGIC_VECTOR(255 downto 0);
+		signal wordsext : arrayofvectors64;
+		signal message: STD_LOGIC_VECTOR(639 downto 0);
+begin
+		message <=x"02000000C2E26FD54C50F4EC37BA8266222A8917EB8AE7A62FBAB0F871000000000000004F80C57D2DB0CF542E5ACA2138C2D1C3A5091643F4463F7317447B112075B5F06D20A051E97F011A00000000";
+
+
+		preprocessing : preproc
+		port map (
+			message         => message,
+			messagechunk1   => smessagechunk1,
+			messagechunk2   => smessagechunk2
+			);
+			
+			
+		first512hash : messagechunk
+		port map (
+			clk            => clk,
+			messagechunk   => smessagechunk1,
+			h0             => x"6a09e667",
+			h1             => x"bb67ae85",
+			h2             => x"3c6ef372",
+			h3             => x"a54ff53a",
+			h4      			=> x"510e527f",
+			h5        		=> x"9b05688c",
+			h6       		=> x"1f83d9ab",
+			h7        		=> x"5be0cd19",
+			chunkhash      => firstchunkhash
+			);
+
+
+		 extender: extendto64 PORT MAP(
+					clk => clk,
+					messagechunk => smessagechunk2,
+					extpart => wordsext
+		 );
+
+			chunk32_4<=wordsext(4);
+			chunk32_5<=wordsext(5);
+			chunk32_6<=wordsext(6);
+			chunk32_7<=wordsext(7);
+			chunk32_8<=wordsext(8);
+			chunk32_9<=wordsext(9);
+			chunk32_10<=wordsext(10);
+			chunk32_11<=wordsext(11);
+			chunk32_12<=wordsext(12);
+			chunk32_13<=wordsext(13);
+			chunk32_14<=wordsext(14);
+			chunk32_15<=wordsext(15);
+			chunk32_16<=wordsext(16);
+			chunk32_17<=wordsext(17);
+			
+
+		process(clk)
+			variable s0,s1  	: std_logic_vector (31 downto 0);
+			variable ch,temp,maj : std_logic_vector (31 downto 0);
+			--unsure if this is the correct size for temp
+			variable vwords : arrayofvectors64:= wordsext;
+			variable letters : letterarray;
+			begin
+			if (clk'event and clk = '1') then
+				vwords := wordsext;
+				
+				letters(0):=firstchunkhash(255 downto 224);
+				letters(1):=firstchunkhash(223 downto 192);
+				letters(2):=firstchunkhash(191 downto 160);
+				letters(3):=firstchunkhash(159 downto 128);
+				letters(4):=firstchunkhash(127 downto 96);
+				letters(5):=firstchunkhash(95 downto 64);
+				letters(6):=firstchunkhash(63 downto 32);
+				letters(7):=firstchunkhash(31 downto 0);
+				hvalues<=letters(7);
+
+				for i in 0 to 2 loop
+					s1:=(letters(4)(5 downto 0)&letters(4)(31 downto 6)) xor (letters(4)(10 downto 0)&letters(4)(31 downto 11)) xor (letters(4)(24 downto 0)&letters(4)(31 downto 25));
+					ch:=(letters(4) and letters(5)) xor ((not letters(4)) and letters(6));
+					temp:=letters(7) + s1 + ch + K(i) + vwords(i);
+					letters(3):=letters(3)+temp;
+					s0:=(letters(0)(1 downto 0)&letters(0)(31 downto 2)) xor (letters(0)(12 downto 0)&letters(0)(31 downto 13)) xor (letters(0)(21 downto 0)&letters(0)(31 downto 22));
+					maj:=(letters(0) and (letters(1) xor letters(2))) xor (letters(1) and letters(2));
+					temp:=temp+s0 + maj;
+					
+					letters(7):=letters(6);
+					letters(6):=letters(5);
+					letters(5):=letters(4);
+					letters(4):=letters(3);
+					letters(3):=letters(2);
+					letters(2):=letters(1);
+					letters(1):=letters(0);
+					letters(0):=temp;					
+				end loop;
+				letters_out<=letters;
+				temp_out<=temp;
+				
+			end if;
+		end process;
+end Behavioral;
+

@@ -10,30 +10,30 @@ Z0 dC:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256
 Parray64
 Z1 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
 Z2 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
-Z3 w1370124016
+Z3 w1370201604
 Z4 dC:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256
 Z5 8array64.vhd
 Z6 Farray64.vhd
 l0
 L13
-VEgB7:4ln7n>ISma<A6WQf0
+VY`TlA0^Rj];GANz?9D1:12
 Z7 OP;C;10.2b;57
 31
-Z8 !s110 1370125262
-Z9 !s108 1370125262.651000
+Z8 !s110 1370202795
+Z9 !s108 1370202795.530000
 Z10 !s90 -reportprogress|300|-explicit|-93|array64.vhd|
 Z11 !s107 array64.vhd|
 Z12 o-explicit -93 -O0
 Z13 tExplicit 1
-!s100 gO^0TDEdF8@h7HXOMLO_>2
+!s100 J<o3DlYj]>EF:LXC<5UGP2
 !i10b 1
 Bbody
-Z14 DPx4 work 7 array64 0 22 EgB7:4ln7n>ISma<A6WQf0
+Z14 DPx4 work 7 array64 0 22 Y`TlA0^Rj];GANz?9D1:12
 R1
 R2
 l0
-L17
-VYMK;mkDJdln;C;fBFA74^3
+L30
+V`_CHcA>Sk?_oj>SZQ_Y4^3
 R7
 31
 R8
@@ -43,27 +43,113 @@ R11
 R12
 R13
 nbody
-!s100 Hi]WFYMFeiZII_[o6LaPF2
+!s100 aVzOOQ29g[AShzBdYHzTh2
 !i10b 1
-Eextendto64
-Z15 w1370125239
+Ecustextendto64
+Z15 w1370202752
 R14
 Z16 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
 Z17 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
 R1
 R2
 R4
-Z18 8extendto64.vhd
-Z19 Fextendto64.vhd
+Z18 8custextendto64.vhd
+Z19 Fcustextendto64.vhd
+l0
+L35
+VdJIlW3ofo]8W3[<m=eKCm2
+R7
+31
+R8
+Z20 !s108 1370202795.932000
+Z21 !s90 -reportprogress|300|-explicit|-93|custextendto64.vhd|
+Z22 !s107 custextendto64.vhd|
+R12
+R13
+!s100 01>[86;>P>K76@Wg0loBG0
+!i10b 1
+Abehavioral
+R14
+R16
+R17
+R1
+R2
+DEx4 work 14 custextendto64 0 22 dJIlW3ofo]8W3[<m=eKCm2
+l45
+L42
+V3MdkBWGjW[G1LULL5WGod1
+R7
+31
+R8
+R20
+R21
+R22
+R12
+R13
+!s100 j=M0Xb2gz;kTDR@Y<hkD01
+!i10b 1
+Ecustom512
+Z23 w1370200913
+R14
+R16
+R17
+R1
+R2
+R4
+Z24 8custom512.vhd
+Z25 Fcustom512.vhd
+l0
+L34
+VWn[H_9T2SSllBHHcgObOo0
+R7
+31
+R8
+Z26 !s108 1370202795.874000
+Z27 !s90 -reportprogress|300|-explicit|-93|custom512.vhd|
+Z28 !s107 custom512.vhd|
+R12
+R13
+!s100 eOo^Xc5CIl^Hj>l@YOdIO2
+!i10b 1
+Abehavioral
+R14
+R16
+R17
+R1
+R2
+DEx4 work 9 custom512 0 22 Wn[H_9T2SSllBHHcgObOo0
+l50
+L43
+VLiagYA45Gm4GjnJOVZCle3
+R7
+31
+R8
+R26
+R27
+R28
+R12
+R13
+!s100 4Rfa_4TihI3MBa?AWi?W83
+!i10b 1
+Eextendto64
+Z29 w1370125239
+R14
+R16
+R17
+R1
+R2
+R4
+Z30 8extendto64.vhd
+Z31 Fextendto64.vhd
 l0
 L35
 VJNk3RKAaM7B;dg_SoBHUe2
 R7
 31
 R8
-Z20 !s108 1370125262.707000
-Z21 !s90 -reportprogress|300|-explicit|-93|extendto64.vhd|
-Z22 !s107 extendto64.vhd|
+Z32 !s108 1370202795.585000
+Z33 !s90 -reportprogress|300|-explicit|-93|extendto64.vhd|
+Z34 !s107 extendto64.vhd|
 R12
 R13
 !s100 g<@3Q765;PCB_]13`_ogS1
@@ -81,32 +167,112 @@ V4:W5dIBXz]g4Willj_0oe0
 R7
 31
 R8
-R20
-R21
-R22
+R32
+R33
+R34
 R12
 R13
 !s100 o3biW]GM]^0o6QEm<oRDe3
 !i10b 1
-Emessagechunk
-Z23 w1370125172
+Ehashgenadder
+Z35 w1370202785
 R14
 R16
 R17
 R1
 R2
 R4
-Z24 8messagechunk.vhd
-Z25 Fmessagechunk.vhd
+Z36 8hashgenadder.vhd
+Z37 Fhashgenadder.vhd
+l0
+L34
+V@z>CGfj`nIzfKOMQ4Q>RZ2
+R7
+31
+Z38 !s110 1370202796
+Z39 !s108 1370202795.989000
+Z40 !s90 -reportprogress|300|-explicit|-93|hashgenadder.vhd|
+Z41 !s107 hashgenadder.vhd|
+R12
+R13
+!s100 ZYOHKlSWXSnz7_1g15<230
+!i10b 1
+Abehavioral
+R14
+R16
+R17
+R1
+R2
+DEx4 work 12 hashgenadder 0 22 @z>CGfj`nIzfKOMQ4Q>RZ2
+l68
+L41
+VnV;N9D<G21?;homG>1L?l2
+R7
+31
+R38
+R39
+R40
+R41
+R12
+R13
+!s100 ncAV3R[<WGbIX9F=AAmJ>3
+!i10b 1
+Ehashgenaddertb
+Z42 w1370201214
+R1
+R2
+R4
+Z43 8hashgenaddertb.vhd
+Z44 Fhashgenaddertb.vhd
+l0
+L35
+VaJCJB6jD]ag0:n@FlogG20
+!s100 JTUc2e^zL?jeO5c_c_WCk2
+R7
+31
+R38
+!i10b 1
+Z45 !s108 1370202796.045000
+Z46 !s90 -reportprogress|300|-explicit|-93|hashgenaddertb.vhd|
+Z47 !s107 hashgenaddertb.vhd|
+R12
+R13
+Abehavior
+R1
+R2
+Z48 DEx4 work 14 hashgenaddertb 0 22 aJCJB6jD]ag0:n@FlogG20
+l61
+L38
+Z49 V;fE:[chjMNCk^mNNVQ2jI2
+Z50 !s100 =ih@?kXKKUQH0VGOZg=^L3
+R7
+31
+R38
+!i10b 1
+R45
+R46
+R47
+R12
+R13
+Emessagechunk
+Z51 w1370157175
+R14
+R16
+R17
+R1
+R2
+R4
+Z52 8messagechunk.vhd
+Z53 Fmessagechunk.vhd
 l0
 L27
 VDDJo5CL0fieao5=<]k<XX1
 R7
 31
 R8
-Z26 !s108 1370125262.853000
-Z27 !s90 -reportprogress|300|-explicit|-93|messagechunk.vhd|
-Z28 !s107 messagechunk.vhd|
+Z54 !s108 1370202795.692000
+Z55 !s90 -reportprogress|300|-explicit|-93|messagechunk.vhd|
+Z56 !s107 messagechunk.vhd|
 R12
 R13
 !s100 KF^0NU85C?jQcCh3D13YY3
@@ -118,35 +284,35 @@ R17
 R1
 R2
 DEx4 work 12 messagechunk 0 22 DDJo5CL0fieao5=<]k<XX1
-l58
+l48
 L34
-VOYH[KK32G9XCHgn@]ogV43
+Vo?WNTl[Ci@o0<DzRnSdjc0
 R7
 31
 R8
-R26
-R27
-R28
+R54
+R55
+R56
 R12
 R13
-!s100 @aFjVSnh0K9BP@^ick=if1
+!s100 ?>VdY[AF4<T26UI5[lNSV2
 !i10b 1
 Epreproc
-Z29 w1370111992
+Z57 w1370111992
 R1
 R2
 R4
-Z30 8preproc.vhd
-Z31 Fpreproc.vhd
+Z58 8preproc.vhd
+Z59 Fpreproc.vhd
 l0
 L32
 VfWzE3[A@<JmbTne>DS2OQ3
 R7
 31
 R8
-Z32 !s108 1370125262.799000
-Z33 !s90 -reportprogress|300|-explicit|-93|preproc.vhd|
-Z34 !s107 preproc.vhd|
+Z60 !s108 1370202795.643000
+Z61 !s90 -reportprogress|300|-explicit|-93|preproc.vhd|
+Z62 !s107 preproc.vhd|
 R12
 R13
 !s100 5=UkL`?R^4XPE5<2l7JcX0
@@ -161,29 +327,72 @@ VF_cGKl<:`VX`_eB8SQ?f_3
 R7
 31
 R8
-R32
-R33
-R34
+R60
+R61
+R62
 R12
 R13
 !s100 V5KTEEk@:^>NeZGahLa]T1
 !i10b 1
-Esha256
-Z35 w1369975057
+Epythonjob
+R3
+R14
+R16
+R17
 R1
 R2
 R4
-Z36 8sha256.vhd
-Z37 Fsha256.vhd
+Z63 8pythonjob.vhd
+Z64 Fpythonjob.vhd
+l0
+L34
+VIXCmh=gHkC2n>gc[baP6Q3
+R7
+31
+R8
+Z65 !s108 1370202795.750000
+Z66 !s90 -reportprogress|300|-explicit|-93|pythonjob.vhd|
+Z67 !s107 pythonjob.vhd|
+R12
+R13
+!s100 T=kS]0kIEejNdIfcz?:oc1
+!i10b 1
+Abehavioral
+R14
+R16
+R17
+R1
+R2
+DEx4 work 9 pythonjob 0 22 IXCmh=gHkC2n>gc[baP6Q3
+l63
+L40
+V:_ZVZld<AI<DRfI4V=h]43
+R7
+31
+R8
+R65
+R66
+R67
+R12
+R13
+!s100 S9m:eZf:T@2iV:^G56DP;2
+!i10b 1
+Esha256
+Z68 w1369975057
+R1
+R2
+R4
+Z69 8sha256.vhd
+Z70 Fsha256.vhd
 l0
 L32
 VZCa7^[hBAk<=jRmfgLg_n2
 R7
 31
-R8
-Z38 !s108 1370125262.914000
-Z39 !s90 -reportprogress|300|-explicit|-93|sha256.vhd|
-Z40 !s107 sha256.vhd|
+Z71 !s110 1370125262
+Z72 !s108 1370125262.914000
+Z73 !s90 -reportprogress|300|-explicit|-93|sha256.vhd|
+Z74 !s107 sha256.vhd|
 R12
 R13
 !s100 DDlX;QLQQXVEH0YeA=F>N0
@@ -195,52 +404,52 @@ DEx4 work 6 sha256 0 22 ZCa7^[hBAk<=jRmfgLg_n2
 l53
 L38
 V3b^9IXTOAZ[m3Q:bUQGlb3
-!s100 9FPH[X6HDzPYOJ`>Sh^2b2
 R7
 31
-R8
-R38
-R39
-R40
+R71
+R72
+R73
+R74
 R12
 R13
+!s100 9FPH[X6HDzPYOJ`>Sh^2b2
 !i10b 1
 Etestbench
-Z41 w1369976148
-Z42 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
+Z75 w1369976148
+Z76 DPx4 ieee 11 numeric_std 0 22 WES[o8HS0jHV[MIXQk2Ha1
 R1
 R2
 R4
-Z43 8shatb.vhd
-Z44 Fshatb.vhd
+Z77 8shatb.vhd
+Z78 Fshatb.vhd
 l0
 L7
 V4BKU[jGG5W5g>hR5?<e_e0
-!s100 :PgYGLIb51E^PC50jf0SP1
 R7
 31
-Z45 !s110 1370125263
-!i10b 1
-Z46 !s108 1370125263.003000
-Z47 !s90 -reportprogress|300|-explicit|-93|shatb.vhd|
-Z48 !s107 shatb.vhd|
+Z79 !s110 1370125263
+Z80 !s108 1370125263.003000
+Z81 !s90 -reportprogress|300|-explicit|-93|shatb.vhd|
+Z82 !s107 shatb.vhd|
 R12
 R13
+!s100 :PgYGLIb51E^PC50jf0SP1
+!i10b 1
 Abehavior
-R42
+R76
 R1
 R2
-Z49 DEx4 work 9 testbench 0 22 4BKU[jGG5W5g>hR5?<e_e0
+DEx4 work 9 testbench 0 22 4BKU[jGG5W5g>hR5?<e_e0
 l22
 L10
-Z50 Ve_X<L7^D_5KgW^g78acC?2
-Z51 !s100 `ZQ6LXfEngDEF^o@kFC`K3
+Ve_X<L7^D_5KgW^g78acC?2
 R7
 31
-R45
-!i10b 1
-R46
-R47
-R48
+R79
+R80
+R81
+R82
 R12
 R13
+!s100 `ZQ6LXfEngDEF^o@kFC`K3
+!i10b 1

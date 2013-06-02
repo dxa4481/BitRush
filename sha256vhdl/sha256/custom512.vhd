@@ -1,0 +1,102 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    14:01:28 06/02/2013 
+-- Design Name: 
+-- Module Name:    custom512 - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use work.array64.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity custom512 is
+		Port(	clk: in STD_LOGIC;
+				wordsext: in arrayofvectors61;
+				letters_in: in letterarray;
+				temp_in: in STD_LOGIC_VECTOR(31 downto 0);
+				hvalues: in letterarray;
+				chunkhash: out STD_LOGIC_VECTOR(255 downto 0):= (others=>'0'));
+end custom512;
+
+architecture Behavioral of custom512 is
+
+
+		
+		signal sh0,sh1,sh2,sh3,sh4,sh5,sh6,sh7: STD_LOGIC_VECTOR(31 downto 0) := (others=>'0');
+	
+
+begin
+		
+
+
+		process(clk)
+			variable s0,s1  	: std_logic_vector (31 downto 0);
+			variable ch,temp,maj : std_logic_vector (31 downto 0);
+			--unsure if this is the correct size for temp
+			variable vwords : arrayofvectors61:= wordsext;
+			variable letters : letterarray;
+			begin
+			if (clk'event and clk = '1') then
+					letters:=letters_in;
+					vwords := wordsext;
+					temp:=temp_in;
+
+ 
+				for i in 3 to 63 loop
+					s1:=(letters(4)(5 downto 0)&letters(4)(31 downto 6)) xor (letters(4)(10 downto 0)&letters(4)(31 downto 11)) xor (letters(4)(24 downto 0)&letters(4)(31 downto 25));
+					ch:=(letters(4) and letters(5)) xor ((not letters(4)) and letters(6));
+					temp:=letters(7) + s1 + ch + K(i) + vwords(i);
+					letters(3):=letters(3)+temp;
+					s0:=(letters(0)(1 downto 0)&letters(0)(31 downto 2)) xor (letters(0)(12 downto 0)&letters(0)(31 downto 13)) xor (letters(0)(21 downto 0)&letters(0)(31 downto 22));
+					maj:=(letters(0) and (letters(1) xor letters(2))) xor (letters(1) and letters(2));
+					temp:=temp+s0 + maj;
+					
+					letters(7):=letters(6);
+					letters(6):=letters(5);
+					letters(5):=letters(4);
+					letters(4):=letters(3);
+					letters(3):=letters(2);
+					letters(2):=letters(1);
+					letters(1):=letters(0);
+					letters(0):=temp;					
+				end loop;
+
+
+
+				sh0<=hvalues(0) + letters(0);
+				sh1<=hvalues(1) + letters(1);
+				sh2<=hvalues(2) + letters(2);
+				sh3<=hvalues(3) + letters(3);
+				sh4<=hvalues(4) + letters(4);
+				sh5<=hvalues(5) + letters(5);
+				sh6<=hvalues(6) + letters(6);
+				sh7<=hvalues(7) + letters(7);
+						
+			end if;
+		end process;
+		chunkhash<= sh0 & sh1 & sh2 & sh3 & sh4 & sh5 & sh6 & sh7;
+
+end Behavioral;
+
