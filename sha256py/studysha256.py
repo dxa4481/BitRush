@@ -27,7 +27,7 @@ Gamma1 = lambda x: (S(x, 17) ^ S(x, 19) ^ R(x, 10))
 
 def sha_transform(sha_info):
     W = []
-    
+
     d = sha_info['data']
     #for dec in d:
         #print(hex(dex))
@@ -36,16 +36,16 @@ def sha_transform(sha_info):
     for i in xrange(16,64):
         W.append( (Gamma1(W[i - 2]) + W[i - 7] + Gamma0(W[i - 15]) + W[i - 16]) & 0xffffffff )
     count=0
-   
+
     ss = sha_info['digest'][:]
-    
+
     def RND(a,b,c,d,e,f,g,h,i,ki):
         t0 = h + Sigma1(e) + Ch(e, f, g) + ki + W[i];
         t1 = Sigma0(a) + Maj(a, b, c);
         d += t0;
         h  = t0 + t1;
         return d & 0xffffffff, h & 0xffffffff
-    
+
     ss[3], ss[7] = RND(ss[0],ss[1],ss[2],ss[3],ss[4],ss[5],ss[6],ss[7],0,0x428a2f98);
     ss[2], ss[6] = RND(ss[7],ss[0],ss[1],ss[2],ss[3],ss[4],ss[5],ss[6],1,0x71374491);
     ss[1], ss[5] = RND(ss[6],ss[7],ss[0],ss[1],ss[2],ss[3],ss[4],ss[5],2,0xb5c0fbcf);
@@ -110,7 +110,7 @@ def sha_transform(sha_info):
     ss[6], ss[2] = RND(ss[3],ss[4],ss[5],ss[6],ss[7],ss[0],ss[1],ss[2],61,0xa4506ceb);
     ss[5], ss[1] = RND(ss[2],ss[3],ss[4],ss[5],ss[6],ss[7],ss[0],ss[1],62,0xbef9a3f7);
     ss[4], ss[0] = RND(ss[1],ss[2],ss[3],ss[4],ss[5],ss[6],ss[7],ss[0],63,0xc67178f2);
-    
+
     dig = []
     for i, x in enumerate(sha_info['digest']):
         dig.append( (x + ss[i]) & 0xffffffff )
@@ -149,35 +149,35 @@ def sha_update(sha_info, buffer):
     if clo < sha_info['count_lo']:
         sha_info['count_hi'] += 1
     sha_info['count_lo'] = clo
-    
+
     sha_info['count_hi'] += (count >> 29)
-    
+
     if sha_info['local']:
         i = SHA_BLOCKSIZE - sha_info['local']
         if i > count:
             i = count
-        
+
         # copy buffer
         for x in enumerate(buffer[buffer_idx:buffer_idx+i]):
             sha_info['data'][sha_info['local']+x[0]] = struct.unpack('B', x[1])[0]
         count -= i
         buffer_idx += i
-        
+
         sha_info['local'] += i
         if sha_info['local'] == SHA_BLOCKSIZE:
             sha_transform(sha_info)
             sha_info['local'] = 0
         else:
             return
-    
+
     while count >= SHA_BLOCKSIZE:
         # copy buffer
         sha_info['data'] = [struct.unpack('B',c)[0] for c in buffer[buffer_idx:buffer_idx + SHA_BLOCKSIZE]]
         count -= SHA_BLOCKSIZE
         buffer_idx += SHA_BLOCKSIZE
         sha_transform(sha_info)
-        
-    
+
+
     # copy buffer
     pos = sha_info['local']
     sha_info['data'][pos:pos+count] = [struct.unpack('B',c)[0] for c in buffer[buffer_idx:buffer_idx + count]]
@@ -198,7 +198,7 @@ def sha_final(sha_info):
         sha_info['data'] = [0] * SHA_BLOCKSIZE
     else:
         sha_info['data'] = sha_info['data'][:count] + ([0] * (SHA_BLOCKSIZE - count))
-    
+
     sha_info['data'][56] = (hi_bit_count >> 24) & 0xff
     sha_info['data'][57] = (hi_bit_count >> 16) & 0xff
     sha_info['data'][58] = (hi_bit_count >>  8) & 0xff
@@ -209,7 +209,7 @@ def sha_final(sha_info):
     sha_info['data'][63] = (lo_bit_count >>  0) & 0xff
 
     sha_transform(sha_info)
-    
+
     dig = []
     for i in sha_info['digest']:
         dig.extend([ ((i>>24) & 0xff), ((i>>16) & 0xff), ((i>>8) & 0xff), (i & 0xff) ])
@@ -223,13 +223,13 @@ class sha256(object):
         self._sha = sha_init()
         if s:
             sha_update(self._sha, getbuf(s))
-    
+
     def update(self, s):
         sha_update(self._sha, getbuf(s))
-    
+
     def digest(self):
         return sha_final(self._sha.copy())[:self._sha['digestsize']]
-    
+
     def hexdigest(self):
         return ''.join(['%.2x' % ord(i) for i in self.digest()])
 
@@ -258,7 +258,6 @@ def test():
     a_str=array.array('B',hexvalue.decode('hex'))
     resultthing=sha256(a_str).digest()
     toprint(resultthing)
-
 
 
 if __name__ == "__main__":

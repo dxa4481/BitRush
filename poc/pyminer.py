@@ -121,7 +121,7 @@ class Miner:
 		block_header = preprocess(block_header)
 
 		port = serial.Serial(0) # This is opening the first serial port
-		
+
 		port.write(255)
 		port.write(targetbin) # Writing the BINARY form of the target
 		port.write(block_header) # Writing the PREPROCESSED header
@@ -154,7 +154,7 @@ class Miner:
 
 		# the first 76b of 80b do not change
 		blk_hdr = static_data[:76]
-		
+
 		# decode 256-bit target value
 		targetbin = targetstr.decode('hex')
 		targetbin = targetbin[::-1]	# byte-swap and dword-swap
@@ -309,4 +309,3 @@ if __name__ == '__main__':
 	except KeyboardInterrupt:
 		pass
 	print time.asctime(), "Miner Stops - %s:%s" % (settings['host'], settings['port'])
-
