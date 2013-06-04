@@ -1,0 +1,2 @@
+vhdtdtfi -lib work array64.vhd -lib work extendto64.vhd -lib work preproc.vhd -lib work messagechunk.vhd -lib work pythonjob.vhd -lib work custom512.vhd -lib work custextendto64.vhd -lib work hashgenadder.vhd -prj sha256 -o hashgenadder.spl -module hashgenadder -template E:/xilinxISE/14.5/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e hashgenadder.spl C:/Users/Admin/Documents/GitHub/BitRush/sha256vhdl/sha256/hashgenadder.sym 

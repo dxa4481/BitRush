@@ -28,6 +28,8 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="compxlib.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="hashgenadder.fdo"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="hashgenadder.spl"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="hashgenadder.sym" xil_pn:origination="imported"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="hashgenaddertb.fdo"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="messagechunk_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="sha256.bld"/>
@@ -76,6 +78,11 @@
     <transform xil_pn:end_ts="1370201218" xil_pn:in_ck="7710416894196698184" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1370201218">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="array64.vhd"/>
       <outfile xil_pn:name="custextendto64.vhd"/>
       <outfile xil_pn:name="custom512.vhd"/>
@@ -103,6 +110,11 @@
     <transform xil_pn:end_ts="1370201218" xil_pn:in_ck="7710416894196698184" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1370201218">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="array64.vhd"/>
       <outfile xil_pn:name="custextendto64.vhd"/>
       <outfile xil_pn:name="custom512.vhd"/>
@@ -118,6 +130,11 @@
     <transform xil_pn:end_ts="1370201221" xil_pn:in_ck="7710416894196698184" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="1085604711667550006" xil_pn:start_ts="1370201218">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="hashgenaddertb.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>

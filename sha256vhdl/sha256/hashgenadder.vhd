@@ -19,12 +19,12 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 use work.array64.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+--use 
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -32,6 +32,7 @@ use work.array64.all;
 --use UNISIM.VComponents.all;
 
 entity hashgenadder is
+			Generic ( numofhashers : integer);
 			Port(	clk: in STD_LOGIC;
 					founcnonce: out STD_LOGIC_VECTOR(31 downto 0):= (others=>'0');
 					foundit: out STD_LOGIC:='0');
@@ -59,6 +60,11 @@ architecture Behavioral of hashgenadder is
 					chunk32_2,chunk32_3,chunk32_4,chunk32_5,chunk32_6,chunk32_7,chunk32_8,chunk32_9,chunk32_10,chunk32_11,chunk32_12,chunk32_13,chunk32_14,chunk32_15,chunk32_16,chunk32_17: in STD_LOGIC_VECTOR(31 downto 0);
 					extpart : out arrayofvectors61 := (others=> (others=> '0')));
 		 END COMPONENT;
+		 COMPONENT hashadder
+			generic ( numofhashers,thishasher : integer );
+			Port(	clk: in STD_LOGIC;
+				nonce: out STD_LOGIC_VECTOR(31 downto 0):= std_logic_vector(to_unsigned(2147483647/numofhashers+thishasher,32)));
+		 END COMPONENT;
 		signal letters_out : letterarray;
 		signal wordsext : arrayofvectors61 :=(others=> (others =>'0'));
 		signal firsthash : STD_LOGIC_VECTOR(255 downto 0);
@@ -69,6 +75,8 @@ begin
 
 --					letters_out: in letterarray;
 --					temp_out,chunk32_4,chunk32_5,chunk32_6,chunk32_7,chunk32_8,chunk32_9,chunk32_10,chunk32_11,chunk32_12,chunk32_13,chunk32_14,chunk32_15,chunk32_16,chunk32_17: in STD_LOGIC_VECTOR(31 downto 0);
+		 
+		 
 		 txrx: pythonjob PORT MAP(
 					clk         => clk,
 					letters_out => letters_out,
@@ -89,11 +97,10 @@ begin
 					chunk32_15  => schunk32_15,
 					chunk32_16  => schunk32_16,
 					chunk32_17  => schunk32_17);
-
-		wordsext(3)<=nonce;
-
-		
-		 firsthashextender: custextendto64 PORT MAP(
+					
+		makehashers: for I in 0 to numofhashers generate
+			wordsext(3)<=nonce;
+			ux: custextendto64 PORT MAP(
 					clk         => clk,
 					chunk32_2   => schunk32_2,
 					chunk32_3   => nonce,
@@ -111,17 +118,31 @@ begin
 					chunk32_15  => schunk32_15,
 					chunk32_16  => schunk32_16,
 					chunk32_17  => schunk32_17,
-					extpart     => wordsext
-		 );		
+					extpart     => wordsext);		
+		 uxn: hashadder 
+			GENERIC MAP(
+				numofhashers => numofhashers,
+				thishasher   => I)
+			PORT MAP(
+				clk   => clk,
+				nonce => nonce);
+			first512hash : custom512
+			port map (
+				clk        => clk,
+				wordsext   => wordsext,
+				letters_in => letters_out,
+				temp_in    => temp_out,
+				hvalues    => hvalues,
+				chunkhash  => firsthash);				
+		end generate makehashers;
 		
 		
-		first512hash : custom512
-		port map (
-			clk        => clk,
-			wordsext   => wordsext,
-			letters_in => letters_out,
-			temp_in    => temp_out,
-			hvalues    => hvalues,
-			chunkhash  => firsthash);
+
+		
+		
+
+		
+		
+
 end Behavioral;
 

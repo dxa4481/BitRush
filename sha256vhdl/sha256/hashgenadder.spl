@@ -1,0 +1,6 @@
+[Inputs]
+clk
+[Outputs]
+foundit
+=founcnonce[31:0]=
+[BiDir]

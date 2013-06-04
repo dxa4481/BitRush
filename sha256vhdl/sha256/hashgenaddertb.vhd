@@ -40,6 +40,7 @@ ARCHITECTURE behavior OF hashgenaddertb IS
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT hashgenadder
+	 Generic ( numofhashers : integer);
     PORT(
          clk : IN  std_logic;
          founcnonce : OUT  std_logic_vector(31 downto 0);
@@ -61,7 +62,10 @@ ARCHITECTURE behavior OF hashgenaddertb IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: hashgenadder PORT MAP (
+   uut: hashgenadder 
+			generic map(
+			 numofhashers => 5)
+			PORT MAP (
           clk => clk,
           founcnonce => founcnonce,
           foundit => foundit
