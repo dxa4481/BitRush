@@ -81,9 +81,9 @@ add
 ---------
 UU...0000
 
-shift left
+shift all the way right
 
-U....0000
+0....000U
 
 shift back to start position
 
