@@ -75,7 +75,10 @@ shift almost all the way left
 0x...0000
 
 add
-
+0x...0000
++
+0x...0000
+---------
 UU...0000
 
 shift left
