@@ -1,27 +1,25 @@
 class Term:
     __slots__=("name","mult1","div","mult2")
 
-    def __init__(self,name,mult1=1,mult2=1,div=1):
+    def __init__(self,name,mult=1,div=1):
         self.name = name
-        self.mult1=mult1
-        self.mult2=mult2
+        self.mult=mult
         self.div=div
     def devideby2(self):
-        if(self.mult1>self.div and self.mult2>1):
-            self.mult2/=2
+        if(self.mult>1):
+            self.mult/=2
         else:
             self.div*=2
             
     def multby2(self):
-        if(self.div==self.mult2 or self.mult1==self.mult2):
-            self.mult1*=2
+        if(self.div>1):
+            self.div/=2
         else:
-            self.mult2*=2
+            self.mult*=2
 
     def solve(self,value):
-        value=(value*self.mult1)%4294967296
+        value=(value*self.mult)%4294967296
         value=(value/self.div)%4294967296
-        value=(value*self.mult2)%4294967296
         return value
 
     def __str__(self):

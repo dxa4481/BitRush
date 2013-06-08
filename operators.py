@@ -67,5 +67,5 @@ def xorbits(num1,num2):
     return sum(thingstoadd)
 
 
-print(bin(shiftleft(shiftright(shiftleft(51,20),21),14)))
+print((shiftleft(shiftright(shiftleft(20,7),1),20)))
 
