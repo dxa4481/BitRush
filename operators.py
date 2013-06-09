@@ -66,6 +66,6 @@ def xorbits(num1,num2):
         thingstoadd.append(bitsum)
     return sum(thingstoadd)
 
-
-print((shiftleft(shiftright(shiftleft(20,7),1),20)))
+print(shiftleft(shiftright(shiftleft(17,20),21),14))
+print(shiftleft(shiftright(shiftleft(17,20),21),14))+(shiftleft(shiftright(shiftleft(12,7),1),20))
 
