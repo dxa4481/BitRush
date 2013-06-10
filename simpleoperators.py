@@ -1,3 +1,9 @@
+"""
+This script is meant to collect like terms using the other add multiply and divide script.
+It does not keep track of input values, but rather, a variable for what the input could be.
+"""
+
+
 from copy import deepcopy
 class Terms:
     __slots__=("termlist")
