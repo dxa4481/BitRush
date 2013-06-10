@@ -1,3 +1,9 @@
+"""
+This script takes all operators used in SHA256 and puts them in terms of
+add, multiply by 2 and divide by 2
+"""
+
+
 def devideby2(num):
     return((num/2)%4294967296)
 def multby2(num):
