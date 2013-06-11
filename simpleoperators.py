@@ -38,16 +38,19 @@ class Term:
         self.mult2=mult2
         self.div=div
     def devideby2(self):
-        if((self.mult1*self.mult2/self.div)==(self.mult1/self.div) or (self.mult1*self.mult2/self.div)==self.mult1):
-            self.div*=2
-        else:
+        if(self.mult2>1 and self.mult2<(self.mult1+self.div)):
             self.mult2/=2
+        else:
+            self.div*=2
+            
             
             
     def multby2(self):
-        if((self.mult1*self.mult2/self.div)==(self.mult1/self.div) or (self.mult1*self.mult2/self.div)==self.mult1):
-            self.mult1*=2
+        if((self.mult1+self.div)>self.mult2):
+            self.mult2*=2
         else:
+            self.div*=2
+            self.mult1*=2
             self.mult2*=2
 
     def solve(self,value):
@@ -71,43 +74,62 @@ class Term:
 
 def shiftleft(terms,shiftplaces):
     tempterms=deepcopy(terms)
+    asdf=0b11
     for i in range(shiftplaces):
+        asdf*=2
         tempterms.multby2()
+##        print(bin(tempterms.solve({'x':7,'y':7})))
+##        print(tempterms.termlist[0].mult1)
+##        print(tempterms.termlist[0].div)
+##        print(tempterms.termlist[0].mult2)
+##        print(i)
+##        print(bin(asdf%4294967296))
+        
     return tempterms
 
 def shiftright(terms,shiftplaces):
     tempterms=deepcopy(terms)
     for i in range(shiftplaces):
+##        print(bin(tempterms.solve({'x':7,'y':7})))
+##        print(tempterms.termlist[0].mult1)
+##        print(tempterms.termlist[0].div)
+##        print(tempterms.termlist[0].mult2)
         tempterms.devideby2()
+##        
+##        print(tempterms.termlist[0].mult1)
+##        print(tempterms.termlist[0].div)
+##        print(tempterms.termlist[0].mult2)
     return tempterms
 
 def setbit(terms,bit):
     bitclone=deepcopy(terms)
+   
     bitclone=shiftright(bitclone,bit)
+      
 
-    print(bin(bitclone.solve({'x':7,'y':7})))
-    bitclone.multby2()
-    print(bitclone.termlist[0].mult1)
-    print(bitclone.termlist[0].div)
-    print(bitclone.termlist[0].mult2)
-    print(bin(bitclone.solve({'x':7,'y':7})))
-    print('~')
-    bitclone.multby2()
-    print(bitclone.termlist[0].mult1)
-    print(bitclone.termlist[0].div)
-    print(bitclone.termlist[0].mult2)
-    print(bin(bitclone.solve({'x':7,'y':7})))
-    print('~')
-    bitclone.multby2()
-    print(bitclone.termlist[0].mult1)
-    print(bitclone.termlist[0].div)
-    print(bitclone.termlist[0].mult2)
-    print(bin(bitclone.solve({'x':7,'y':7})))
-    print('~')    
+
+##    print(bitclone.termlist[0].mult1)
+##    print(bitclone.termlist[0].div)
+##    print(bitclone.termlist[0].mult2)
+##    print(bin(bitclone.solve({'x':7,'y':7})))
+##    print('~')
+
+##    print(bitclone.termlist[0].mult1)
+##    print(bitclone.termlist[0].div)
+##    print(bitclone.termlist[0].mult2)
+##    print(bin(bitclone.solve({'x':7,'y':7})))
+##    print('~')
+
+##    print(bitclone.termlist[0].mult1)
+##    print(bitclone.termlist[0].div)
+##    print(bitclone.termlist[0].mult2)
+    
+##    print('~')
+    
     bitclone=shiftleft(bitclone,31)
-    
+##    print(bin(bitclone.solve({'x':7,'y':7})))   
     bitclone=shiftright(bitclone,31-bit)
-    
+##    print(bin(bitclone.solve({'x':7,'y':7})))    
     return bitclone
 
 def andbits(terms1,terms2):
@@ -157,7 +179,7 @@ terms2=Terms([term2])
 #terms1=shiftright(terms1,31-a)
 
 
-terms1=setbit(terms1,2)
+terms1=setbit(terms1,0)
 print(terms1.solve({'x':7,'y':7}))
 
 print(len(terms1.termlist))
