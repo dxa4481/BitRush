@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/dev/BitRush/uart/uart_tx_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="uart_tx_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/uart_tx_tb/i_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/i_reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/i_ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_ce</obj_property>
+      <obj_property name="ObjectShortName">i_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/i_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/i_dv" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_dv</obj_property>
+      <obj_property name="ObjectShortName">i_dv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/o_tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_tx</obj_property>
+      <obj_property name="ObjectShortName">o_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/o_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_busy</obj_property>
+      <obj_property name="ObjectShortName">o_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/i_clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">i_clk_period</obj_property>
+      <obj_property name="ObjectShortName">i_clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider23" type="divider">
+      <obj_property name="label">------------</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/i_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/i_reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/i_ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_ce</obj_property>
+      <obj_property name="ObjectShortName">i_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/i_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/i_dv" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_dv</obj_property>
+      <obj_property name="ObjectShortName">i_dv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/o_tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_tx</obj_property>
+      <obj_property name="ObjectShortName">o_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/o_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_busy</obj_property>
+      <obj_property name="ObjectShortName">o_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/payload" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">payload[7:0]</obj_property>
+      <obj_property name="ObjectShortName">payload[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count[2:0]</obj_property>
+      <obj_property name="ObjectShortName">count[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/r_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">r_busy</obj_property>
+      <obj_property name="ObjectShortName">r_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/r_tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">r_tx</obj_property>
+      <obj_property name="ObjectShortName">r_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/s_reset_count" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_reset_count</obj_property>
+      <obj_property name="ObjectShortName">s_reset_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_tx_tb/uut/count_max" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count_max[2:0]</obj_property>
+      <obj_property name="ObjectShortName">count_max[2:0]</obj_property>
+   </wvobject>
+</wave_config>

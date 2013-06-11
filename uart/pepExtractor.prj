@@ -1,0 +1,4 @@
+work	"uart_clkgen.vhd"
+work	"uart_rx.vhd"
+work	"uart_top.vhd"
+work	"uart_tx.vhd"
