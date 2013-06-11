@@ -1,0 +1,105 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~rotate right by x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+e/(2^x)+(e and (2^(x-1)) * 2^(32-x)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~shift right by x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+e/(2^x)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~shift left by x~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+e*(2^x)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~XOR~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+take one bit at a time
+U are unknown, x is the bit in question
+vector 1
+U....UUUx
+vector 2
+U....UUUx
+
+First shift the bit all the way right
+
+Then
+
+shift all the way left
+X....0000
+
+shift all the way left
+X....0000
+
+add
+X....0000
++
+X....0000
+---------
+U....0000
+
+shift back to start position
+
+0....000U
+
+
+do this for all bits and then add them
+
+0....000U
++
+0....00U0
++
+0....0U00
+.
+.
+.
++
+U....0000
+---------
+=XOR OUTPUT
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AND~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+take one bit at a time
+U are unknown, x is the bit in question
+vector 1
+U....UUUx
+vector 2
+U....UUUx
+
+First shift the bit all the way right then all the way left so it is the only potentially nonzero bit
+
+Then
+
+shift almost all the way left
+0x...0000
+
+shift almost all the way left
+0x...0000
+
+add
+0x...0000
++
+0x...0000
+---------
+UU...0000
+
+shift all the way right
+
+0....000U
+
+shift back to start position
+
+0....000U
+
+do this for all bits and then add them
+
+0....000U
++
+0....00U0
++
+0....0U00
+.
+.
+.
++
+U....0000
+---------
+=AND OUTPUT
