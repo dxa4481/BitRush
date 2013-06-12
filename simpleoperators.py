@@ -44,7 +44,7 @@ class Term:
         self.mult2=mult2
         self.div=div
     def devideby2(self):
-        if(self.mult2>1 and self.mult2<(self.mult1+self.div)):
+        if(self.mult2>1):
             self.mult2/=2
         else:
             self.div*=2
@@ -52,12 +52,13 @@ class Term:
             
             
     def multby2(self):
-        if((self.mult1+self.div)>self.mult2):
-            self.mult2*=2
-        else:
+        if(self.mult1==self.mult2):
             self.div*=2
             self.mult1*=2
+            self.mult2*=2            
+        else:
             self.mult2*=2
+
 
     def solve(self,value):
         value=(value*self.mult1)%4294967296
@@ -84,7 +85,7 @@ def shiftleft(terms,shiftplaces):
     for i in range(shiftplaces):
         asdf*=2
         tempterms.multby2()
-##        print(bin(tempterms.solve({'x':7,'y':7})))
+        print(bin(tempterms.solve({'x':7,'y':7})))
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
@@ -96,12 +97,14 @@ def shiftleft(terms,shiftplaces):
 def shiftright(terms,shiftplaces):
     tempterms=deepcopy(terms)
     for i in range(shiftplaces):
-##        print(bin(tempterms.solve({'x':7,'y':7})))
+        print('poop')
+        print(bin(tempterms.solve({'x':7,'y':7})))
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
         tempterms.devideby2()
-##        
+        print('poop')
+        print(bin(tempterms.solve({'x':7,'y':7})))        
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
@@ -185,8 +188,16 @@ terms2=Terms([term2])
 #terms1=shiftright(terms1,31-a)
 
 
-terms1=setbit(terms1,0)
-print(terms1.solve({'x':7,'y':7}))
+#terms1=setbit(terms1,1)
+terms1.devideby2()
+print(bin(terms1.solve({'x':2,'y':7})))
+import math
+for i in range(32):
+    print(math.log(terms1.termlist[0].mult1,2))
+    print(math.log(terms1.termlist[0].div,2))
+    print(math.log(terms1.termlist[0].mult2,2))
+    terms1.multby2()
+    print(bin(terms1.solve({'x':2,'y':7})))
 
 print(len(terms1.termlist))
 
