@@ -52,7 +52,7 @@ class Term:
             
             
     def multby2(self):
-        if(self.mult1==self.mult2):
+        if((self.div)==self.mult2):
             self.div*=2
             self.mult1*=2
             self.mult2*=2            
@@ -85,7 +85,7 @@ def shiftleft(terms,shiftplaces):
     for i in range(shiftplaces):
         asdf*=2
         tempterms.multby2()
-        print(bin(tempterms.solve({'x':7,'y':7})))
+##        print(bin(tempterms.solve({'x':7,'y':7})))
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
@@ -97,14 +97,14 @@ def shiftleft(terms,shiftplaces):
 def shiftright(terms,shiftplaces):
     tempterms=deepcopy(terms)
     for i in range(shiftplaces):
-        print('poop')
-        print(bin(tempterms.solve({'x':7,'y':7})))
+##        print('poop')
+##        print(bin(tempterms.solve({'x':7,'y':7})))
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
         tempterms.devideby2()
-        print('poop')
-        print(bin(tempterms.solve({'x':7,'y':7})))        
+##        print('poop')
+##        print(bin(tempterms.solve({'x':7,'y':7})))        
 ##        print(tempterms.termlist[0].mult1)
 ##        print(tempterms.termlist[0].div)
 ##        print(tempterms.termlist[0].mult2)
@@ -148,8 +148,11 @@ def andbits(terms1,terms2):
         bit2=setbit(terms2,i)
         bit1=shiftleft(bit1,30-i)
         bit2=shiftleft(bit2,30-i)
+
         bitsum=bit1.add(bit2)
+
         bitsum=setbit(bitsum,31)
+        print(bin(bitsum.solve({'x':7,'y':7})))
         bitsum=shiftright(bitsum,31-i)
         thingstoadd.append(bitsum)
     bit1=setbit(terms1,31)
@@ -160,11 +163,13 @@ def andbits(terms1,terms2):
     bitsum=setbit(bitsum,31)
     thingstoadd.append(bitsum)
     tempterm=thingstoadd[0]
+    print(bin(tempterm.solve({'x':7,'y':7})))
     tempbool=True
     for term in thingstoadd:
         if(tempbool):
             tempbool=False
         else:
+            print(bin(tempterm.solve({'x':7,'y':7})))
             tempterm.add(term)
     return tempterm
 
@@ -188,16 +193,16 @@ terms2=Terms([term2])
 #terms1=shiftright(terms1,31-a)
 
 
-#terms1=setbit(terms1,1)
-terms1.devideby2()
-print(bin(terms1.solve({'x':2,'y':7})))
-import math
-for i in range(32):
-    print(math.log(terms1.termlist[0].mult1,2))
-    print(math.log(terms1.termlist[0].div,2))
-    print(math.log(terms1.termlist[0].mult2,2))
-    terms1.multby2()
-    print(bin(terms1.solve({'x':2,'y':7})))
+terms1=andbits(terms1,terms2)
+##terms1.devideby2()
+
+##import math
+##for i in range(31):
+##    print(math.log(terms1.termlist[0].mult1,2))
+##    print(math.log(terms1.termlist[0].div,2))
+##    print(math.log(terms1.termlist[0].mult2,2))
+##    terms1.multby2()
+##    print(bin(terms1.solve({'x':7,'y':7})))
 
 print(len(terms1.termlist))
 
