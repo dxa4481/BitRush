@@ -34,7 +34,12 @@ class Terms:
         stringout=''
         for term in self.termlist:
             stringout+=term.__str__()+' + '
-        return stringout        
+        return stringout
+    def clone(self):
+        newterms = []
+        for term in self.termlist:
+            newterms.append(term.clone())
+        return newterms
 class Term:
     __slots__=("name","mult1","div","mult2")
 
@@ -70,6 +75,9 @@ class Term:
             self.mult2+=term.mult2
             return True
         return False
+    def clone(self):
+        return Term(self.name, self.mult1, self.div, self.mult2)
+
     def __str__(self):
         stringout = '((('+self.name+' * '+str(self.mult1) + ')'
         stringout+= ' / ' + str(self.div) + ')'
@@ -140,6 +148,8 @@ def setbit(terms,bit):
     bitclone=shiftright(bitclone,31-bit)
 ##    print(bin(bitclone.solve({'x':7,'y':7})))    
     return bitclone
+def deepcopy(terms):
+    return terms.clone
 
 def andbits(terms1,terms2):
     thingstoadd=[]
